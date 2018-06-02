@@ -9,7 +9,6 @@ import styles from './style'
 class Main extends Component {
 
     render() {
-        debugger;
         const { classes } = this.props;
 
         return (
