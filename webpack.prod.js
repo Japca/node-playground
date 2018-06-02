@@ -1,18 +1,19 @@
 const webpack = require('webpack')
 const path = require('path')
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
-const VENDOR_LIBS = [
+const VENDOR = [
     'react', 'react-dom', 'axios', 'express',
-]
+    '@material-ui/core', '@material-ui/icons'
+];
 
 const bundleDir = './public'
 
 
 module.exports = {
+    // mode: 'production',
     entry: {
-        main: './src/client/app.js'
+        main: './src/ui/app.js'
     },
     output: {
         path: path.resolve(__dirname, bundleDir),
@@ -46,7 +47,6 @@ module.exports = {
     devtool: 'source-map',
     plugins: [
         new CleanWebpackPlugin([bundleDir]),
-        new ExtractTextPlugin({filename: 'style.css', allChunks: true}),
         new webpack.optimize.CommonsChunkPlugin({
             names: ['vendor', 'manifest']
         }),
