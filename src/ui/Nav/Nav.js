@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import { Link } from 'react-router-dom';
 
-
 export const ROOT = '/'
 export const MAIN = '/main'
 export const TABLE = '/table'
