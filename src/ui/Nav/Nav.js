@@ -1,8 +1,5 @@
 import React, {Component} from 'react'
-import NavLink from '../NavLink/NavLink'
 import {withRouter} from 'react-router-dom';
-import Grid from '@material-ui/core/Grid'
-
 
 import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
@@ -12,16 +9,6 @@ import Tab from '@material-ui/core/Tab';
 export const ROOT = '/'
 export const MAIN = '/main'
 export const TABLE = '/table'
-
-import Typography from '@material-ui/core/Typography';
-
-function TabContainer(props) {
-    return (
-        <Typography component="div" style={{padding: 8 * 3}}>
-            {props.children}
-        </Typography>
-    );
-}
 
 class Nav extends Component {
 
@@ -69,7 +56,6 @@ class Nav extends Component {
     render() {
         console.info('Nav component');
         const {value} = this.state;
-        debugger;
         return (
             <div>
                 <AppBar position="static">
@@ -78,7 +64,6 @@ class Nav extends Component {
                         <Tab label="Table"/>
                     </Tabs>
                 </AppBar>
-
             </div>
         )
     }
