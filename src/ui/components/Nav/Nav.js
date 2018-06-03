@@ -42,7 +42,6 @@ class Nav extends Component {
         const {history: {push}} = this.props;
         switch (value) {
             case 0 :
-                debugger;
                 push(MAIN);
                 break;
             case 1 :
