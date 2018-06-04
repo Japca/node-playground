@@ -2,7 +2,7 @@ const express = require('express');
 const server = express();
 const path = require('path');
 
-const port = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
 
 server.get('/getData', (req, res) => {
     foo("dddd")(req, res)
@@ -26,5 +26,5 @@ if(process.env.NODE_ENV !== 'procuction') {
  }
 
  
-server.listen(port, () => console.log(`Garage player server stared on port: ${port}`))
+server.listen(PORT, () => console.log(`Garage player server stared on port: ${PORT}`))
 ;

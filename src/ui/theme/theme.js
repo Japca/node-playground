@@ -17,7 +17,7 @@ const theme = createMuiTheme({
             main: indigo[700],
             dark: indigo[700],
 
-            contrastText: grey[800],
+            // contrastText: grey[800],
         },
 
         // error: {

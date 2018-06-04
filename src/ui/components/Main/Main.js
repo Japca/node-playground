@@ -14,8 +14,8 @@ class Main extends Component {
 
         return (
 
-            <Grid container>
-                <Grid item>
+            <Grid container spacing={16}>
+                <Grid item >
                     <ItemList/>
                 </Grid>
 
