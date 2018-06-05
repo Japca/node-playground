@@ -3,6 +3,12 @@
   "version": "1.0.0",
   "description": "template for my node projects",
   "main": "app.js",
+
+  "engines": {
+    "node": "9.11.1",
+    "npm": "6.1.0"
+  },
+
   "scripts": {
     "dev": "webpack-dev-server --config webpack.dev.js",
     "start": "node src/server/server.js",

@@ -40,7 +40,14 @@ module.exports = {
                 use: {
                     loader: 'file-loader?name=fonts/[name].[ext]',
                 }
+            },
+            {
+                test: /\.(png|jpg?)(\?[a-z0-9]+)?$/,
+                use: {
+                    loader: 'file-loader?name=images/[name].[ext]',
+                }
             }
+
         ],
     },
 
