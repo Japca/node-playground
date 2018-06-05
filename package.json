@@ -13,7 +13,10 @@
     "dev": "webpack-dev-server --config webpack.dev.js",
     "start": "node src/server/server.js",
     "build": "webpack -p --progress --display-modules --config webpack.prod.js",
+
+    "heroku-postbuild": "webpack -p --progress --display-modules --config webpack.prod.js",
     "test":  "node src/server/play.js"
+
   },
   "dependencies": {
     "@material-ui/core": "^1.1.0",
