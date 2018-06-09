@@ -1,9 +1,14 @@
 const express = require('express');
-const server = express();
+const app = express();
 const path = require('path');
 
+const webpack = require('webpack');
+const webpackDevMiddleware = require('webpack-dev-middleware');
+const config = require('../../webpack.dev');
+const compiler = webpack(config);
 
-server.get('/getData', (req, res) => {
+
+app.get('/getData', (req, res) => {
     foo("dddd")(req, res)
 });
 
@@ -13,18 +18,20 @@ const foo =  (data) => (req, res) =>
 
 
 // if(process.env.NODE_ENV !== 'procuction') {
-//   const webpackMiddleware = require('webpack-dev-middleware');
-//   const webpack = require('webpack');
-//   const webpackConfig = require('../../node_modules/webpack');
-//   server.use(webpackMiddleware(webpack(webpackConfig)))
+//     debugger;
+    app.use(webpackDevMiddleware(compiler, {
+        publicPath: config.output.publicPath
+    }));
+
 // } else {
-  server.use(express.static('public'));
-  server.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public/index.html'))
-  })
- // }
+//   app.use(express.static('dist'));
+//     debugger;
+//   app.get('*', (req, res) => {
+//     res.sendFile(path.join(__dirname, 'dist/index.html'))
+//   })
+// }
 
 
 const PORT = process.env.PORT || 3000;
-server.listen(PORT, () => console.log(`Garage player server stared on port: ${PORT}`));
+app.listen(PORT, () => console.log(`Garage player server stared on port: ${PORT}`));
 

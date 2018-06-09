@@ -1,13 +1,13 @@
 const path = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const bundleDir = './public'
+const bundleDir = './dist'
 
 module.exports = {
      mode: 'development',
 
     entry: {
-        app: '/src/ui/app.js'
+        app: './src/ui/app.js'
     },
     output: {
         path: path.resolve(__dirname, bundleDir),
@@ -32,13 +32,13 @@ module.exports = {
 
             },
             {
-                test: /\.(ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
+                test: /\.(ttf|otf|eot|woff(2)?)(\?[a-z0-9]+)?$/,
                 use: {
                     loader: 'file-loader?name=fonts/[name].[ext]',
                 }
             },
             {
-                test: /\.(png|jpg?)(\?[a-z0-9]+)?$/,
+                test: /\.(png|svg|jpg|gif)$/,
                 use: {
                     loader: 'file-loader?name=images/[name].[ext]',
                 }
@@ -52,12 +52,17 @@ module.exports = {
         hot: true,
         contentBase: path.join(__dirname, bundleDir),
         host: 'localhost',
+        publicPath: '/'
+
     },
 
     plugins: [
         new HtmlWebpackPlugin({
-            template: 'src/template/index-dev.html'
+            template: 'src/template/index.html'
         }),
+        new webpack.NamedModulesPlugin(),
         new webpack.HotModuleReplacementPlugin()
+
+
     ]
 }

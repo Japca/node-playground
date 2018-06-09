@@ -7,7 +7,7 @@ const VENDOR = [
     '@material-ui/core', '@material-ui/icons'
 ];
 
-const bundleDir = './public'
+const bundleDir = './dist'
 
 
 module.exports = {
@@ -36,13 +36,13 @@ module.exports = {
 
             },
             {
-                test: /\.(ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
+                test: /\.(ttf|otf|eot|woff(2)?)(\?[a-z0-9]+)?$/,
                 use: {
                     loader: 'file-loader?name=fonts/[name].[ext]',
                 }
             },
             {
-                test: /\.(png|jpg?)(\?[a-z0-9]+)?$/,
+                test: /\.(png|svg|jpg|gif)$/,
                 use: {
                     loader: 'file-loader?name=images/[name].[ext]',
                 }
@@ -50,8 +50,6 @@ module.exports = {
 
         ],
     },
-
-    devtool: 'source-map',
     plugins: [
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify('production')
@@ -61,7 +59,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: 'src/template/index.html'
         }),
-       ]
+    ]
 }
 
 
