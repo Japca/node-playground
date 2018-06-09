@@ -4,10 +4,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const bundleDir = './public'
 
 module.exports = {
-    // mode: 'development',
+     mode: 'development',
 
     entry: {
-        app: './src/ui/app.js'
+        app: '/src/ui/app.js'
     },
     output: {
         path: path.resolve(__dirname, bundleDir),

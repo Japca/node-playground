@@ -12,17 +12,17 @@ const foo =  (data) => (req, res) =>
     res.send(data);
 
 
-if(process.env.NODE_ENV !== 'procuction') {
-  const webpackMiddleware = require('webpack-dev-middleware');
-  const webpack = require('webpack');
-  const webpackConfig = require('../../webpack.dev');
-  server.use(webpackMiddleware(webpack(webpackConfig)))
-} else {
+// if(process.env.NODE_ENV !== 'procuction') {
+//   const webpackMiddleware = require('webpack-dev-middleware');
+//   const webpack = require('webpack');
+//   const webpackConfig = require('../../node_modules/webpack');
+//   server.use(webpackMiddleware(webpack(webpackConfig)))
+// } else {
   server.use(express.static('public'));
   server.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'public/index.html'))
   })
- }
+ // }
 
 
 const PORT = process.env.PORT || 3000;

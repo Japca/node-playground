@@ -11,13 +11,13 @@ const bundleDir = './public'
 
 
 module.exports = {
-    // mode: 'production',
+    mode: 'production',
     entry: {
         main: './src/ui/app.js'
     },
     output: {
         path: path.resolve(__dirname, bundleDir),
-        filename: '[name].[chunkhash].js'
+        filename: 'bundle.js'
     },
     module: {
         rules: [
@@ -53,28 +53,15 @@ module.exports = {
 
     devtool: 'source-map',
     plugins: [
-        new CleanWebpackPlugin([bundleDir]),
-        new webpack.optimize.CommonsChunkPlugin({
-            names: ['vendor', 'manifest']
-        }),
-
-        new HtmlWebpackPlugin({
-            template: 'src/template/index.html'
-        }),
-
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify('production')
         }),
 
-        new webpack.optimize.UglifyJsPlugin({
-            sourceMap: true,
-            compress: {
-                warnings: false
-            }
+        new CleanWebpackPlugin([bundleDir]),
+        new HtmlWebpackPlugin({
+            template: 'src/template/index.html'
         }),
-        new webpack.LoaderOptionsPlugin({minimize: true}),
-        new webpack.optimize.ModuleConcatenationPlugin(),
-    ]
+       ]
 }
 
 
