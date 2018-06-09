@@ -9,12 +9,13 @@ const PRODUCTION = 'production';
 module.exports = merge(common, {
     mode: PRODUCTION,
 
+    devtool: 'source-map',
     plugins: [
+        new CleanWebpackPlugin([bundleDir]),
+
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify(PRODUCTION)
         }),
-
-        new CleanWebpackPlugin([bundleDir]),
     ]
 })
 

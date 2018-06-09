@@ -10,7 +10,7 @@
   },
   "scripts": {
     "dev": "webpack-dev-server --config webpack.dev.js",
-    "start": "node src/server/server.js",
+    "start": "NODE_ENV=production node src/server/server.js",
     "build": "webpack --progress --display-modules --config webpack.prod.js",
     "heroku-postbuild": "webpack -p --progress --display-modules --config webpack.prod.js",
     "play": "node src/server/play.js"
