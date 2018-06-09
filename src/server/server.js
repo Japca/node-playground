@@ -13,23 +13,20 @@ app.get('/getData', (req, res) => {
 });
 
 
-const foo =  (data) => (req, res) =>
+const foo = (data) => (req, res) =>
     res.send(data);
 
 
-// if(process.env.NODE_ENV !== 'procuction') {
-//     debugger;
+if (process.env.NODE_ENV !== 'production') {
     app.use(webpackDevMiddleware(compiler, {
         publicPath: config.output.publicPath
     }));
-
-// } else {
-//   app.use(express.static('dist'));
-//     debugger;
-//   app.get('*', (req, res) => {
-//     res.sendFile(path.join(__dirname, 'dist/index.html'))
-//   })
-// }
+} else {
+    app.use(express.static('dist'));
+    app.get('*', (req, res) => {
+        res.sendFile(path.join(__dirname, 'dist/index.html'))
+    })
+}
 
 
 const PORT = process.env.PORT || 3000;
