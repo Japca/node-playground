@@ -7,14 +7,17 @@ import {MuiThemeProvider} from '@material-ui/core/styles';
 import theme from './theme/theme'
 import Nav from './components/Nav/Nav'
 import Content from './components/Content/Content'
-
+import css from '../static/reset.css'
 import 'typeface-roboto'
 
 
 const style = {
-    height: '100%',
-    width: '100%',
-    background: "white"
+     height: '100%',
+    // width: '100%',
+     background: "white"
+
+
+
 }
 
 const app = document.getElementById('app');

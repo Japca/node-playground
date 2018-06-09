@@ -18,6 +18,7 @@ import indigo from "@material-ui/core/colors/indigo";
 
 import image from '../../../static/images/jenny.jpg';
 
+
 const data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
 
 
@@ -27,12 +28,16 @@ const styles = theme => ({
         display: "flex",
         justifyContent: "space-evenly",
 
-        maxWidth: "100%",
-        overflowX: "hidden",
+        // boxShadow: '0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08)',
+        // transition: 'box-shadow 200ms cubic-bezier(0.4, 0.0, 0.2, 1)',
+
+        // maxWidth: "100%",
+        // overflowX: "hidden",
+        // border: `1px solid `,
         // width: '100%',
         // maxWidth: 360,
-        backgroundColor: theme.palette.secondary.main,
-      //  overflow: 'auto',
+        backgroundColor: '#fff',
+        overflow: 'auto',
         maxHeight: "90%",
         marginTop: theme.spacing.unit * 3,
         marginLeft: theme.spacing.unit,
@@ -42,6 +47,10 @@ const styles = theme => ({
     },
 
     item: {
+
+        boxShadow: '0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08)',
+        transition: 'box-shadow 200ms cubic-bezier(0.4, 0.0, 0.2, 1)',
+
         backgroundColor: theme.palette.primary.main,
         // backgroundColor: blue["100"],
         // margin: theme.spacing.unit / 2 ,
@@ -51,44 +60,22 @@ const styles = theme => ({
          marginBottom: theme.spacing.unit / 4
 
 
+    },
+    textSize: {
+        fontSize: 16
     }
+
 });
 
 class ItemList extends Component {
 
-    state = {
-        checked: [1],
-    };
-
-    handleToggle = value => () => {
-        const { checked } = this.state;
-        const currentIndex = checked.indexOf(value);
-        const newChecked = [...checked];
-
-        if (currentIndex === -1) {
-            newChecked.push(value);
-        } else {
-            newChecked.splice(currentIndex, 1);
-        }
-
-        this.setState({
-            checked: newChecked,
-        });
-    };
-
-    createItem = index => {
+      createItem = index => {
         const { classes } = this.props;
         let checked = 1;
         return (
-            <ListItem key={index} dense button className={classes.item}>
+            <ListItem dense button className={classes.item}>
                 <Avatar alt="jenny" src={image}/>
-                <ListItemText primary={`Line item ${index}`} />
-                <ListItemSecondaryAction>
-                    <Checkbox
-                       // onChange={this.handleToggle(index)}
-                       //  checked={this.state.checked.indexOf(index) !== -1}
-                    />
-                </ListItemSecondaryAction>
+                <ListItemText className={classes.textSize}  primary={`Sudoku`} />
             </ListItem>
         )
     }
@@ -96,11 +83,11 @@ class ItemList extends Component {
     render() {
         const {classes} = this.props;
         return (
+
             <div className={classes.root}>
                 <List>
-                    {data.map(index => {
-                        return this.createItem(index)
-                    })}
+                    {this.createItem()}
+
                 </List>
             </div>
         );

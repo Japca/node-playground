@@ -1,2 +1,3 @@
+export const SET_TECHNOLOGY = 'SET_TECHNOLOGY';
 
-const setTechnology = text => ({ type: "SET_TECHNOLOGY", text });
+export const setTechnology = text => ({ type: SET_TECHNOLOGY, text });

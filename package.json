@@ -3,20 +3,16 @@
   "version": "1.0.0",
   "description": "template for my node projects",
   "main": "app.js",
-
   "engines": {
     "node": "9.11.1",
     "npm": "6.1.0"
   },
-
   "scripts": {
     "dev": "webpack-dev-server --config webpack.dev.js",
     "start": "node src/server/server.js",
     "build": "webpack -p --progress --display-modules --config webpack.prod.js",
-
     "heroku-postbuild": "webpack -p --progress --display-modules --config webpack.prod.js",
-    "test":  "node src/server/play.js"
-
+    "play": "node src/server/play.js"
   },
   "dependencies": {
     "@material-ui/core": "^1.1.0",
@@ -24,6 +20,7 @@
     "axios": "^0.17.1",
     "express": "^4.16.2",
     "prop-types": "^15.6.1",
+    "ramda": "^0.25.0",
     "react": "^16.3.0",
     "react-dom": "^16.3.0",
     "react-router-dom": "^4.2.2",

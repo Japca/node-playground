@@ -7,7 +7,7 @@ import Tab from '@material-ui/core/Tab';
 
 
 export const ROOT = '/'
-export const MAIN = '/main'
+export const GAMES = '/games'
 export const TABLE = '/table'
 
 class Nav extends Component {
@@ -15,7 +15,7 @@ class Nav extends Component {
     static getDefaultValue(props) {
         let {location: {pathname}} = props.history;
         switch (pathname) {
-            case MAIN :
+            case GAMES :
                 return 0;
             case TABLE :
                 return 1;
@@ -42,7 +42,7 @@ class Nav extends Component {
         const {history: {push}} = this.props;
         switch (value) {
             case 0 :
-                push(MAIN);
+                push(GAMES);
                 break;
             case 1 :
                 push(TABLE);
@@ -59,7 +59,7 @@ class Nav extends Component {
             <div>
                 <AppBar position="static">
                     <Tabs value={value} onChange={this.handleChange}>
-                        <Tab label="Main"/>
+                        <Tab label="Games"/>
                         <Tab label="Table"/>
                     </Tabs>
                 </AppBar>
