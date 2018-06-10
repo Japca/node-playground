@@ -9,6 +9,16 @@ const PRODUCTION = 'production';
 module.exports = merge(common, {
     mode: PRODUCTION,
 
+    output: {
+        filename: '[name].[chunkhash].js'
+    },
+
+    optimization: {
+        splitChunks: {
+            chunks: 'all'
+        }
+    },
+
     devtool: 'source-map',
     plugins: [
         new CleanWebpackPlugin([bundleDir]),

@@ -5,11 +5,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const bundleDir = './dist'
 
-const VENDOR = [
-    'react', 'react-dom', 'axios', 'express',
-    '@material-ui/core', '@material-ui/icons'
-];
-
 
 module.exports = {
 
@@ -19,7 +14,6 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, bundleDir),
         filename: 'bundle.js'
-
     },
 
     module: {
