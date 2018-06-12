@@ -7,14 +7,14 @@ import {MuiThemeProvider} from '@material-ui/core/styles';
 import theme from './theme/theme'
 import Nav from './components/Nav/Nav'
 import Content from './components/Content/Content'
-import css from '../static/reset.css'
+import css from '../static/css/reset.css';
 import 'typeface-roboto'
 
 
 const style = {
-     height: '100%',
+     // minHeight: '100%',
     // width: '100%',
-     background: "white"
+    //  background: "white"
 
 
 
@@ -24,8 +24,8 @@ const app = document.getElementById('app');
 ReactDOM.render(
     <Router>
         <MuiThemeProvider theme={theme}>
-            <div style={style}>
-                <CssBaseline/>
+            {/*<CssBaseline/>*/}
+            <div style={style} >
                 <Nav/>
                 <Content/>
             </div>

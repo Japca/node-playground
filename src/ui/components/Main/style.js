@@ -4,12 +4,14 @@ export default theme => ({
 
     },
 
-    paper: {
-        display: "flex",
-        justifyContent: "space-evenly",
-        alignItems: "center",
-        height: "90%",
-        width: 200
+    content: {
+        background: 'cadetblue',
+        marginTop: theme.spacing.unit / 4,
+        // display: "flex",
+        // justifyContent: "space-evenly",
+        // alignItems: "center",
+    //      height: '90%',
+    //      width: '90%'
     },
 });
 

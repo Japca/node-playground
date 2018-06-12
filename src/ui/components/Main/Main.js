@@ -13,21 +13,22 @@ class Main extends Component {
         const { classes } = this.props;
 
         return (
-
-            <Grid container spacing={16}>
+            <div className={classes.root}>
+            <Grid container  spacing={16}>
                 <Grid item >
                     <ItemList/>
                 </Grid>
 
-                {/*<Grid item>*/}
+                <Grid item xs={10}  className={classes.content}>
+
                     {/*<Grid container >*/}
                         {/*<Grid item>*/}
-                            {/*<Paper className={classes.paper} ></Paper>*/}
+
                         {/*</Grid>*/}
                     {/*</Grid>*/}
-                {/*</Grid>*/}
+                </Grid>
             </Grid>
-
+            </div>
         );
     }
 }
