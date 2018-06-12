@@ -10,22 +10,12 @@ import Content from './components/Content/Content'
 import css from '../static/css/reset.css';
 import 'typeface-roboto'
 
-
-const style = {
-     // minHeight: '100%',
-    // width: '100%',
-    //  background: "white"
-
-
-
-}
-
 const app = document.getElementById('app');
 ReactDOM.render(
     <Router>
         <MuiThemeProvider theme={theme}>
             {/*<CssBaseline/>*/}
-            <div style={style} >
+            <div>
                 <Nav/>
                 <Content/>
             </div>

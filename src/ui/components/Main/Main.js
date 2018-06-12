@@ -15,11 +15,11 @@ class Main extends Component {
         return (
             <div className={classes.root}>
             <Grid container  spacing={16}>
-                <Grid item >
+                <Grid item  xs={2}>
                     <ItemList/>
                 </Grid>
 
-                <Grid item xs={10}  className={classes.content}>
+                <Grid item  xs={10}  className={classes.content}>
 
                     {/*<Grid container >*/}
                         {/*<Grid item>*/}

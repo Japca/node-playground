@@ -1,24 +1,37 @@
 import React, {Component} from 'react';
 import {withStyles} from '@material-ui/core/styles';
-import { Switch, Route } from 'react-router-dom'
+import {Switch, Route} from 'react-router-dom'
 
-import { ROOT, GAMES, TABLE} from "../Nav/Nav";
+import {ROOT, GAMES, TABLE} from "../Nav/Nav";
 import Main from "../Main/Main";
 import SimpleTable from "../Table/SimpleTable";
 
+const styles = {
+
+    root: {
+         // display: "flex",
+         // justifyContent: "space-evenly",
+
+    },
+
+
+}
 
 class Content extends Component {
 
     render() {
+        const { classes } = this.props;
         return (
-            <Switch>
-                <Route exact path={ROOT} component={Main}/>
-                <Route path={GAMES} component={Main}/>
-                <Route path={TABLE} component={SimpleTable}/>
-            </Switch>
+            <div className={classes.root} >
+                <Switch>
+                    <Route exact path={ROOT} component={Main}/>
+                    <Route path={GAMES} component={Main}/>
+                    <Route path={TABLE} component={SimpleTable}/>
+                </Switch>
+            </div>
         )
     }
 }
 
 
-export default Content;
+export default withStyles(styles)(Content);

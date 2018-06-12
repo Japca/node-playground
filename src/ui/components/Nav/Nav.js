@@ -10,6 +10,8 @@ export const ROOT = '/'
 export const GAMES = '/games'
 export const TABLE = '/table'
 
+
+
 class Nav extends Component {
 
     static getDefaultValue(props) {
