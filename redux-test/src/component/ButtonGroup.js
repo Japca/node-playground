@@ -19,6 +19,7 @@ const ButtonGroup = ({ technologies }) => (
 );
 
 function dispatchBtnAction(e) {
+    debugger;
     const tech = e.target.dataset.tech;
     store.dispatch(setTechnology(tech));
 }

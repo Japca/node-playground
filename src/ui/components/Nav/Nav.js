@@ -1,5 +1,7 @@
 import React, {Component} from 'react'
 import {withRouter} from 'react-router-dom';
+import { withStyles } from '@material-ui/core/styles';
+
 
 import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
@@ -10,7 +12,13 @@ export const ROOT = '/'
 export const GAMES = '/games'
 export const TABLE = '/table'
 
+const styles = {
+    root: {
+        padding: 0,
+        margin:0
+    }
 
+}
 
 class Nav extends Component {
 
@@ -56,13 +64,15 @@ class Nav extends Component {
 
     render() {
         console.info('Nav component');
+        const { classes } = this.props
         const {value} = this.state;
         return (
-            <div>
-                <AppBar position="static">
+            <div className={classes.root} >
+                <AppBar className={classes.root} position="static">
                     <Tabs value={value} onChange={this.handleChange}>
                         <Tab label="Games"/>
                         <Tab label="Table"/>
+                        <Tab label="test"/>
                     </Tabs>
                 </AppBar>
             </div>
@@ -71,4 +81,4 @@ class Nav extends Component {
 }
 
 
-export default withRouter(Nav)
+export default withRouter(withStyles(styles)(Nav))

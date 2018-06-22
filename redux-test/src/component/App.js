@@ -12,6 +12,7 @@ const margin = {
 class App extends Component {
 
   render() {
+      debugger;
     return (
       <div style={margin}>
           <HelloWorld tech={store.getState().tech}/>

@@ -14,7 +14,7 @@ const app = document.getElementById('app');
 ReactDOM.render(
     <Router>
         <MuiThemeProvider theme={theme}>
-            {/*<CssBaseline/>*/}
+            <CssBaseline />
             <div>
                 <Nav/>
                 <Content/>

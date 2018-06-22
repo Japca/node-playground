@@ -1,20 +1,11 @@
 import React, {Component} from 'react'
 import {withStyles} from '@material-ui/core/styles';
 
-
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Avatar from '@material-ui/core/Avatar';
-import ImageIcon from '@material-ui/icons/Image';
-import WorkIcon from '@material-ui/icons/Work';
-import BeachAccessIcon from '@material-ui/icons/BeachAccess';
-import Button from '@material-ui/core/Button'
-import ListSubheader from '@material-ui/core/ListSubheader'
-import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction'
-import Checkbox from '@material-ui/core/Checkbox'
-import blue from "@material-ui/core/colors/blue";
-import indigo from "@material-ui/core/colors/indigo";
+
 
 import image from '../../../static/images/jenny.jpg';
 

@@ -5,9 +5,8 @@ export default function reducer (state, action) {
     switch (action.type) {
         case SET_TECHNOLOGY:
             return {
-                ...state,
-                text: action.tech
-            }; //return new state
+                tech : action.text
+            }
         default:
             return state;
     }
