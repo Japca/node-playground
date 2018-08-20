@@ -1,49 +1,63 @@
-var sum_pairs = function (ints, s) {
-    let result;
-    ints.forEach((int, index) => {
-        for (let i = index + 1; i < ints.length; i++) {
-            if (int + ints[i] === s && (result === undefined || ints.lastIndexOf(ints[i]) < ints.lastIndexOf(result[1]))) {
-                result = [int, ints[i]];
-            }
-        }
-    })
+// var sum_pairs = function (ints, s) {
+//     let result;
+//     ints.forEach((int, index) => {
+//         for (let i = index + 1; i < ints.length; i++) {
+//             if (int + ints[i] === s && (result === undefined || ints.lastIndexOf(ints[i]) < ints.lastIndexOf(result[1]))) {
+//                 result = [int, ints[i]];
+//             }
+//         }
+//     })
+//
+//     return result;
+// }
+//
 
-    return result;
+const R = require('ramda')
+
+// const findAll = (whole, width) => {
+//
+// }
+//
+//
+// console.log(findAll(2, 3))
+
+const mixedFraction = (fraction) => {
+	const splitFraction = fraction.split('/')
+	let result = splitFraction[0] / splitFraction[1];
+	return result;
 }
 
-
-function isIsogram(str) {
-    return !/(\w).*\1/i.test(str)
-}
-
-
-const rps = (a, b) => a == b ? 'Draw!' : `Player ${/rp|ps|sr/.test(a[0] + b[0]) ? 2 : 1} won!`;
-
-const snail = (arrays) => {
-    let result = [...arrays[0]];
-    for (let i = 1; i < arrays.length; i++) {
-        const currentArray = arrays[i];
-        result.push(currentArray[currentArray.length - 1])
-    }
-
-    const currArray = arrays[arrays.length -1];
-    for (let i = currArray.length - 2; i >= 0; i--) {
-        result.push(currArray[i])
-    }
-
-
-    for(let i = arrays.length -2; i > 0; i--) {
-        const currentArray = arrays[i];
-        result.push(currentArray[0]);
-    }
-
-    for(let i = 1; i <  arrays[1].length -1; i++) {
-        result.push(arrays[1][i]);
-    }
-
-
-    return result;
-}
-
-
-console.log(snail([[1, 2, 3], [4, 5, 6], [7, 8, 9]]));
+console.log(mixedFraction('42/9'))
+//
+// const banksData = [
+// 		{'CSOB': {gateWay: 'GPE', email: 'gpwebpay@gpe.cz'}},
+// 	{'CSO': {gateWay: 'GPE', email: 'gpwebpay@gpe.cz'}}
+//
+// ];
+//
+//
+// const getBanksData = (selector) => (aquirer) => (data) => {
+// 	debugger;
+// 	return R.path([aquirer, selector], R.find(R.propEq(aquirer), data));
+// 	//pathOr('', [1, selector], find(propEq(0, searchValue), map));
+// 	// return R.find(R.propEq('CSOB'))(banksData)
+// 	//  return R.mapObjIndexed((value) => value.email, R.find(R.propEq(aquirer))(banksData))[aquirer];
+//
+// 	// return R.filter(key =>'CSOB' === key, banksData)
+// 	// let data;
+// 	// R.forEachObjIndexed((value, key) => {'CSOB' == key;  data = value.email} , banksData)
+// 	// return data
+// }
+//
+// const getData = getBanksData('email')('CSOB')
+// //
+// // const getBanksData = aquirer => {
+// // 	R.find()
+// // }
+//
+// // import { find, identity, propEq, useWith } from 'ramda';
+// //
+// // const f = useWith(find, [propEq('id'), identity]);
+//
+// //console.log(getData(banksData)); //=> {a: 2})
+// console.log(Math.pow(2, 5))

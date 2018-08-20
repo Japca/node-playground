@@ -4,7 +4,7 @@ import {Switch, Route} from 'react-router-dom'
 
 import {ROOT, GAMES, TABLE} from "../Nav/Nav";
 import Main from "../Main/Main";
-import SimpleTable from "../Table/SimpleTable";
+import DataLayout from '../../components';
 
 const styles = {
 
