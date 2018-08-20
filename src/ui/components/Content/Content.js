@@ -4,7 +4,7 @@ import {Switch, Route} from 'react-router-dom'
 
 import {ROOT, GAMES, TABLE} from "../Nav/Nav";
 import Main from "../Main/Main";
-import DataLayout from '../../components';
+import { DataLayout } from '../../components';
 
 const styles = {
 
@@ -26,7 +26,7 @@ class Content extends Component {
                 <Switch>
                     <Route exact path={ROOT} component={Main}/>
                     <Route path={GAMES} component={Main}/>
-                    <Route path={TABLE} component={SimpleTable}/>
+                    <Route path={TABLE} component={DataLayout}/>
                 </Switch>
             </div>
         )
